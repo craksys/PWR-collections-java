@@ -6,9 +6,8 @@ import java.util.Arrays;
 public class PersonConsoleApp {
 
 	private static final String GREETING_MESSAGE = 
-			"Program Person - wersja konsolowa\n" + 
-	        "Autor: Paweł Rogaliński\n" +
-			"Data:  październik 2018 r.\n";
+			"Program Person - wersja konsolowa\n" +
+			"Data:  listopad 2021 r.\n";
 
 	private static final String MENU = 
 			"    M E N U   G Ł Ó W N E  \n" +
@@ -17,7 +16,9 @@ public class PersonConsoleApp {
 			"3 - Modyfikuj dane osoby   \n" +
 			"4 - Wczytaj dane z pliku   \n" +
 			"5 - Zapisz dane do pliku   \n" +
-			"0 - Zakończ program        \n";	
+			"6 - Wybierz kolekcje do porównania   \n" +
+			"7 - Dodaj 10 standardowych elementów do kolekcji   \n" +
+			"0 - Zakończ program        \n";
 	
 	private static final String CHANGE_MENU = 
 			"   Co zmienić?     \n" + 
