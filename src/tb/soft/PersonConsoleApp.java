@@ -1,6 +1,7 @@
 package tb.soft;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 
 public class PersonConsoleApp {
@@ -70,6 +71,7 @@ public class PersonConsoleApp {
 	 */
 	public void runMainLoop() {
 		UI.printMessage(GREETING_MESSAGE);
+		Colections colections = new Colections();
 
 		while (true) {
 			UI.clearConsole();
@@ -80,6 +82,7 @@ public class PersonConsoleApp {
 				case 1:
 					// utworzenie nowej osoby
 					currentPerson = createNewPerson();
+					colections.savetocollection(currentPerson,selected_collection1,selected_collection2);
 					break;
 				case 2:
 					// usunięcie danych aktualnej osoby.
@@ -126,6 +129,84 @@ public class PersonConsoleApp {
 
 					}
 					break;
+					case 7:
+					{
+						Person a = new Person("Kamil","Kochan");
+						a.setBirthYear(2001);
+						a.setJob("Student");
+						colections.savetocollection(a,selected_collection1,selected_collection2);
+						colections.savetocollection(a,selected_collection1,selected_collection2);
+						Person b = new Person("Kamil","Kochan");
+						b.setBirthYear(2001);
+						b.setJob("Student");
+						colections.savetocollection(b,selected_collection1,selected_collection2);
+						Person c = new Person("Kornel","Kochan");
+						c.setBirthYear(2001);
+						c.setJob("Nauczyciel");
+						colections.savetocollection(c,selected_collection1,selected_collection2);
+						Person d = new Person("Kamil","Madryt");
+						d.setBirthYear(2001);
+						d.setJob("Gość");
+						colections.savetocollection(d,selected_collection1,selected_collection2);
+						Person e = new Person("Klaudiusz","Maten");
+						e.setBirthYear(2003);
+						e.setJob("Gość");
+						colections.savetocollection(e,selected_collection1,selected_collection2);
+						Person f = new Person("Mateusz","Morawski");
+						f.setBirthYear(2000);
+						f.setJob("Nauczyciel");
+						colections.savetocollection(f,selected_collection1,selected_collection2);
+						Person g = new Person("Andrzej","Duda");
+						g.setBirthYear(2001);
+						g.setJob("Kierownik");
+						colections.savetocollection(g,selected_collection1,selected_collection2);
+						Person h = new Person("Mateusz","Morawiecki");
+						h.setBirthYear(2001);
+						h.setJob("Student");
+						colections.savetocollection(h,selected_collection1,selected_collection2);
+						Person i = new Person("Jarosław","Kaczyski");
+						i.setBirthYear(2001);
+						i.setJob("Dyrektor");
+						colections.savetocollection(i,selected_collection1,selected_collection2);
+						Person j = new Person("Andrzenj","Michalski");
+						j.setBirthYear(2001);
+						j.setJob("Student");
+						colections.savetocollection(j,selected_collection1,selected_collection2);
+					}
+					break;
+					case 8: {
+						switch(selected_collection1){
+							case 1: colections.displayhashset();
+							break;
+							case 2: colections.displaytreeset();
+							break;
+							case 3: colections.disarraylist();
+							break;
+							case 4: colections.dislinkedlist();
+							break;
+							case 5: colections.dishashmap();
+							break;
+							case 6: colections.distreemap();
+							break;
+						}
+						System.out.println("---------------");
+						switch(selected_collection2){
+							case 1: colections.displayhashset();
+								break;
+							case 2: colections.displaytreeset();
+								break;
+							case 3: colections.displayhashset();
+								break;
+							case 4: colections.displayhashset();
+								break;
+							case 5: colections.displayhashset();
+								break;
+							case 6: colections.displayhashset();
+								break;
+						}
+
+					}
+					break;
 				case 0:
 					// zakończenie działania programu
 					UI.printInfoMessage("\nProgram zakończył działanie!");
@@ -148,7 +229,7 @@ public class PersonConsoleApp {
 	 */
 	void showCurrentPerson() {
 		showPerson(currentPerson);
-	} 
+	}
 
 	
 	/* 

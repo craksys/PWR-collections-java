@@ -79,7 +79,7 @@ class PersonException extends Exception {
  * niedozwolonej wartości, któremuś z atrybutów jest zgłaszany wyjątek
  * zawierający stosowny komunikat.
  */
-public class Person {
+public class Person implements Comparable {
 	
 	private String firstName;
 	private String lastName;
@@ -92,6 +92,7 @@ public class Person {
 		setLastName(last_name);
 		job = PersonJob.UNKNOWN;
 	}
+
 
 	
 	public String getFirstName() {
@@ -212,5 +213,10 @@ public class Person {
 			throw new PersonException("Wystąpił błąd podczas odczytu danych z pliku.");
 		}	
 	}
-	
+
+
+	@Override
+	public int compareTo(Object o) {
+		return 1;
+	}
 }  // koniec klasy Person
