@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 
 public class PersonConsoleApp {
+	private int selected_collection1;
+	private int selected_collection2;
 
 	private static final String GREETING_MESSAGE = 
 			"Program Person - wersja konsolowa\n" +
@@ -27,6 +29,15 @@ public class PersonConsoleApp {
 	        "3 - Rok urodzenia  \n" + 
 			"4 - Stanowisko     \n" +
 	        "0 - Powrót do menu głównego\n";
+
+	private static final String CHOOSE_COLLECTION =
+					"1 - HashSet           \n" +
+					"2 - TreeSet       \n" +
+					"3 - ArrayList  \n" +
+					"4 - LinkedList     \n" +
+					"5 - HashMap\n" +
+					"6 - TreeMap\n";
+
 
 	
 	/**
@@ -93,7 +104,27 @@ public class PersonConsoleApp {
 					Person.printToFile(file_name, currentPerson);
 					UI.printInfoMessage("Dane aktualnej osoby zostały zapisane do pliku " + file_name);
 				}
+					break;
+					case 6: {
+						System.out.println("Wybierz kolekcje nr 1: ");
+						UI.printMessage(CHOOSE_COLLECTION);
+						selected_collection1 = UI.enterInt("");
+						System.out.println("Wybierz kolekcje nr 2: ");
+						UI.printMessage(CHOOSE_COLLECTION);
+						selected_collection2 = UI.enterInt("");
+						if(selected_collection2 == selected_collection1 ){
+							System.out.println("WYBRANO 2 IDENTYCZNE KOELEKCJE!");
+							selected_collection2=0;
+							selected_collection1=0;
+						} else if(selected_collection1 == 0 || selected_collection2==0) {
+							System.out.println("NIE WYBRANO KOLEKCJI!");
+							selected_collection2=0;
+							selected_collection1=0;
+						}
 
+
+
+					}
 					break;
 				case 0:
 					// zakończenie działania programu
