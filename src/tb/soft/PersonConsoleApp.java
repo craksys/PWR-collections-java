@@ -2,14 +2,7 @@ package tb.soft;
 
 import java.util.Arrays;
 
-/**
- * Program: Aplikacja działająca w oknie konsoli, która umożliwia testowanie 
- *          operacji wykonywanych na obiektach klasy Person.
- *    Plik: PersonConsoleApp.java
- *          
- *   Autor: Paweł Rogaliński
- *    Data: październik 2018 r.
- */
+
 public class PersonConsoleApp {
 
 	private static final String GREETING_MESSAGE = 
