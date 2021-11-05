@@ -83,10 +83,29 @@ public class Person implements Comparable {
 	
 	private String firstName;
 	private String lastName;
-	private int birthYear;
-	private PersonJob job;
- 
-	
+	public int birthYear;
+	public PersonJob job;
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+
+		Person person = (Person) o;
+
+		if (birthYear != person.birthYear) return false;
+		if (firstName != null ? !firstName.equals(person.firstName) : person.firstName != null) return false;
+		return lastName.equals(person.lastName);
+	}
+
+	@Override
+	public int hashCode() {
+		int result = firstName != null ? firstName.hashCode() : 0;
+		result = 31 * result + lastName.hashCode();
+		result = 31 * result + birthYear;
+		return result;
+	}
+
 	public Person(String first_name, String last_name) throws PersonException {
 		setFirstName(first_name);
 		setLastName(last_name);

@@ -1,7 +1,6 @@
 package tb.soft;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 
 public class PersonConsoleApp {
@@ -24,6 +23,7 @@ public class PersonConsoleApp {
 			"7 - Dodaj 11 standardowych elementów do kolekcji   \n" +
 			"8 - Wypisz wszystkie elementy 2 wybranych kolekcji   \n" +
 			"9 - Usuń wybrany element z wybranych kolekcji   \n" +
+			"10 - Test metody equals i hashCode (używać po opcji nr.1)   \n" +
 			"0 - Zakończ program        \n";
 	
 	private static final String CHANGE_MENU = 
@@ -210,7 +210,9 @@ public class PersonConsoleApp {
 
 					}
 					break;
-					case 9: colections.deletefromcollection();
+					case 9: colections.removefromcolections(selected_collection1,selected_collection2);
+					break;
+					case 10: showmetodequals();
 					break;
 				case 0:
 					// zakończenie działania programu
@@ -327,6 +329,27 @@ public class PersonConsoleApp {
 			}
 		}
 	}
-	
+	public void showmetodequals() throws PersonException {
+		PersonEquals personEqualsHash = new PersonEquals(currentPerson);
+        System.out.println("");
+		showCurrentPerson();
+		System.out.println("Obiekt bez metody: " + currentPerson.hashCode());
+		System.out.println("Obiekt z metodą: " + personEqualsHash.hashCode());
+		System.out.println("");
+
+		Person copyperson = new Person(currentPerson.getFirstName(), currentPerson.getLastName());
+		copyperson.setBirthYear(currentPerson.getBirthYear());
+		copyperson.setJob(currentPerson.getJob());
+		PersonEquals copiedperson = new PersonEquals(copyperson);
+		System.out.println("Wynik po przeprowadzeniu operacji: ");
+
+
+		showPerson(copyperson);
+		System.out.println("Wynik dla skopiowanych elementów bez metody: " + currentPerson.equals(copyperson));
+		System.out.println("Wynik dla skopiowanych elementów z metodą: " + copiedperson.equals(personEqualsHash));
+		System.out.println("");
+
+
+	}
 	
 }  // koniec klasy PersonConsoleApp

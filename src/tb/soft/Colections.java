@@ -175,7 +175,7 @@ Person person1 = createNewPerson();
         hashmap.remove(UI.enterInt("Podaj nr. indeksu do usnięcia: "));
     }
     public void deletetreemap(){
-        treemap.remove(UI.enterInt("Podaj nr. indeksu do usnięcia: "));
+        treemap.remove(person);
     }
     public void removefromcolections(int selected_collection1,int selected_collection2){
         switch(selected_collection1){
