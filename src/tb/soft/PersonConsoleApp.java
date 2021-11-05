@@ -14,13 +14,16 @@ public class PersonConsoleApp {
 
 	private static final String MENU = 
 			"    M E N U   G Ł Ó W N E  \n" +
+			"    PAMIĘTAJ O WYBORZE KOLEKCJI TESTOWYCH (OPCJA 6)  \n" +
 			"1 - Podaj dane nowej osoby \n" +
 			"2 - Usuń dane osoby        \n" +
 			"3 - Modyfikuj dane osoby   \n" +
 			"4 - Wczytaj dane z pliku   \n" +
 			"5 - Zapisz dane do pliku   \n" +
 			"6 - Wybierz kolekcje do porównania   \n" +
-			"7 - Dodaj 10 standardowych elementów do kolekcji   \n" +
+			"7 - Dodaj 11 standardowych elementów do kolekcji   \n" +
+			"8 - Wypisz wszystkie elementy 2 wybranych kolekcji   \n" +
+			"9 - Usuń wybrany element z wybranych kolekcji   \n" +
 			"0 - Zakończ program        \n";
 	
 	private static final String CHANGE_MENU = 
@@ -195,17 +198,19 @@ public class PersonConsoleApp {
 								break;
 							case 2: colections.displaytreeset();
 								break;
-							case 3: colections.displayhashset();
+							case 3: colections.disarraylist();
 								break;
-							case 4: colections.displayhashset();
+							case 4: colections.dislinkedlist();
 								break;
-							case 5: colections.displayhashset();
+							case 5: colections.dishashmap();
 								break;
-							case 6: colections.displayhashset();
+							case 6: colections.distreemap();
 								break;
 						}
 
 					}
+					break;
+					case 9: colections.deletefromcollection();
 					break;
 				case 0:
 					// zakończenie działania programu
