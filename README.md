@@ -1,8 +1,19 @@
-# kolekcje
-parę przykładowych klas do użycia w kolekcjach
+# Przykładowe użycie kolecji w Java
 
-klasa Person - dane do trzymania w kolekcji
+Prowadzący: T.B. (Języki Programowania)
 
-klasa ConsoleUserDialog - konsolowy interfejs użytkownika
+Użyte struktury:
 
-klasa PersonConsoleApp - klasa i funkcja główna
+1 - HashSet
+
+2 - TreeSet
+
+3 - ArrayList
+
+4 - LinkedList
+
+5 - HashMap
+
+6 - TreeMap
+
+
